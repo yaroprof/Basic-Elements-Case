@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px clamp(10px, 2vw, 40px);
+    background-color: #282c34;
+    color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.logo {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(20px, 4vw, 40px); /* Додаємо відступи між елементами меню */
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.menu-list a:hover {
+    color: #61dafb;
+}
+
+.menu-list a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #61dafb;
+    transition: width 0.3s ease;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+.menu-list a:hover::after {
+    width: 100%;
+}
+
+.navbar-mobile {
+    display: none;
+    position: relative;
+}
+
+.mobile-btn {
+    background-color: #61dafb;
+    color: #282c34;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mobile-btn:hover {
+    background-color: #21a1f1;
+    box-shadow: 0 4px 15px rgba(33, 161, 241, 0.5);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #282c34;
+    padding: 15px;
+    width: clamp(180px, 50vw, 220px);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu.open {
+    display: block;
+    margin-top: 2rem;
+}
+
+.mobile-menu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-menu-list a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    transition: color 0.3s ease;
+}
+
+.mobile-menu-list a:hover {
+    color: #61dafb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+    .navbar-mobile {
+        display: block;
+    }
+}
