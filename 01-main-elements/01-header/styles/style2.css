@@ -122,3 +122,23 @@ header {
         margin-left: 0; /* Контент займає всю ширину */
     }
 }
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        right: 20px;
+        left: auto;
+    }
+
+    /* Чорний колір ліній до відкриття сайдбару */
+    .menu-toggle .burger-line {
+        background-color: #333;
+    }
+
+    /* Коли меню активне, колір ліній стає білим */
+    .menu-toggle.active .burger-line {
+        background-color: #fff;
+    }
+}
+
+

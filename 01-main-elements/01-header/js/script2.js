@@ -4,5 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuToggle.addEventListener('click', () => {
         sidebar.classList.toggle('fullscreen');
+        menuToggle.classList.toggle('active'); // Додаємо або прибираємо клас 'active'
     });
+    
 });
