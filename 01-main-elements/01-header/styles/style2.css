@@ -1,44 +1,41 @@
-/* Основні стилі для тіла документа */
-body {
+body{
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: #333;
     display: flex;
-    height: 100vh; /* Повна висота екрану */
+    height: 100vh;   
 }
 
-/* Стилі для header */
-header {
+header{
     display: flex;
     flex: 1;
 }
 
-/* Стилі для лого */
-.logo {
-    background-color: #333;
-    color: #fff;
+.logo{
     display: flex;
+    justify-content:center;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
+    color: #fff;
     font-size: 1.5rem;
+    background-color: #333;
+    padding: 20px;
 }
 
-/* Стилі для кнопки перемикання меню */
-.menu-toggle {
-    display: none; /* Приховати кнопку за замовчуванням */
+.menu-toggle{
+    display: none;
     position: fixed;
     top: 20px;
     left: 50%;
-    transform: translateX(-50%);
-    background: none;
-    border: none;
-    padding: 10px;
     cursor: pointer;
-    z-index: 1000; /* Вперед, щоб бути над іншими елементами */
+    z-index: 1000;
+    background: none;
+    padding: 10px;
+
+    border: none;
+    transform: translateX(-50%);
 }
 
-.menu-toggle .burger-line {
+.menu-toggle .burger-line{
     display: block;
     width: 25px;
     height: 3px;
@@ -46,99 +43,90 @@ header {
     margin: 5px 0;
 }
 
-/* Стилі для бічного меню */
-.sidebar {
-    width: 250px; /* Фіксована ширина для бічного меню */
-    background-color: #f4f4f4;
-    border-right: 1px solid #ddd;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease;
-    transform: translateX(0); /* Початкове розташування */
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
+.sidebar{
+   display: flex;
+   position: fixed;
+   flex-direction: column;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   width: 250px;
+   border-radius: 1px solid #ddd;
+   transition: transform 0.3s ease;
+   transform: translatex(0);
+    border: 1px solid red
 }
 
-/* Сховати бічне меню на менших екранах */
 .sidebar.hidden {
     transform: translateX(-100%);
 }
 
-/* Повне меню на весь екран при звуженні */
-.sidebar.fullscreen {
+.sidebar.fullscreen{
     width: 100%;
     height: 100%;
     transform: translateX(0);
     z-index: 999;
+
 }
 
-/* Стилі для меню */
-.menu {
+.menu{
     display: flex;
     flex-direction: column;
     padding: 20px;
 }
 
-.menu a {
+.menu a{
     text-decoration: none;
     color: #333;
-    padding: 15px;
     font-size: 1rem;
+    padding: 15px;
     border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: backdround-color 0.3s, color 0.3s;
 }
 
-.menu a:hover {
+.menu a:hover{
     background-color: #61dafb;
     color: #fff;
 }
 
-/* Стилі для контенту */
-.content {
-    flex: 1;
-    margin-left: 250px; /* Зміщення контенту вправо на ширину сайдбара */
+.content{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     text-align: center;
-    transition: margin-left 0.3s ease;
+
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;;
 }
 
-/* Адаптивні стилі для меншого екрану */
-@media (max-width: 768px) {
-    .sidebar {
-        transform: translateX(-100%); /* Спочатку сховано */ 
+@media (max-width: 768px){
+    .sidebar{
+        transform: translate(-100%);
     }
 
-    .menu-toggle {
-        display: block; /* Показати кнопку перемикання на менших екранах */
+    .menu-toggle{
+        display: block;
     }
 
-    .content {
-        margin-left: 0; /* Контент займає всю ширину */
+    .content{
+        margin-left: 0;
     }
 }
 
-@media (max-width: 768px) {
-    .menu-toggle {
+@media (max-width: 768px){
+    .menu-toggle{
         display: block;
         right: 20px;
         left: auto;
     }
 
-    /* Чорний колір ліній до відкриття сайдбару */
-    .menu-toggle .burger-line {
+    .menu-toggle .burger-line{
         background-color: #333;
     }
 
-    /* Коли меню активне, колір ліній стає білим */
-    .menu-toggle.active .burger-line {
+    .menu-toggle.active .burger-line{
         background-color: #fff;
     }
 }
-
-
